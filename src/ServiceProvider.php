@@ -1,5 +1,5 @@
 <?php
-namespace NsCreed\MigrationPath;
+namespace matt127127\MigrationPath;
 
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
@@ -25,8 +25,8 @@ class ServiceProvider extends LaravelServiceProvider
                 'laravel-migration-paths'
             );
 
-            $customMigrationPaths = new CustomMigrationPaths(config('laravel-migration-paths'));
-            $this->loadMigrationsFrom($customMigrationPaths->getRegisteredPaths());
+            $multipleMigrationPaths = new MultipleMigrationPaths(config('laravel-migration-paths'));
+            $this->loadMigrationsFrom($multipleMigrationPaths->getRegisteredPaths());
         }
     }
 }

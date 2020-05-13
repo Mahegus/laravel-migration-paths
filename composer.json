@@ -1,13 +1,13 @@
 {
-  "name": "nscreed/laravel-migration-paths",
-  "description": "Custom migration paths for Laravel project.",
+  "name": "matt127127/laravel-migration-paths",
+  "description": "Multiple migration paths for Laravel projects.",
   "type": "library",
   "keywords": ["laravel", "migrations"],
   "license": "MIT",
   "authors": [
     {
-      "name": "Faisal Islam",
-      "email": "faisal.islam70@gmail.com"
+      "name": "Matthew Treagus",
+      "email": "matt@treagus.me"
     }
   ],
   "minimum-stability": "dev",
@@ -18,13 +18,13 @@
   },
   "autoload": {
     "psr-4": {
-      "NsCreed\\MigrationPath\\": "src/"
+      "matt127127\\MigrationPath\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "NsCreed\\MigrationPath\\ServiceProvider"
+        "matt127127\\MigrationPath\\ServiceProvider"
       ]
     }
   }

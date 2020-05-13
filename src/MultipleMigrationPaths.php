@@ -1,17 +1,21 @@
 <?php
-namespace NsCreed\MigrationPath;
+namespace matt127127\MigrationPath;
 
 
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
-class CustomMigrationPaths
+class MultipleMigrationPaths
 {
+
+    /**
+     * @var array
+     */
     protected $paths = [];
 
-    public function __construct(array $config)
+    public function __construct(array $config = [])
     {
-        $this->paths = is_array($config['paths']) ? $config['paths'] : [];
+        $this->paths = $config['paths'];
     }
 
     /**
@@ -30,11 +34,17 @@ class CustomMigrationPaths
         return $paths;
     }
 
+    /**
+     * @return array
+     */
     private function getPaths($path)
     {
         $paths = [];
 
-        $iterators = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS), RecursiveIteratorIterator::SELF_FIRST);
+        $iterators = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS), 
+            RecursiveIteratorIterator::SELF_FIRST
+        );
 
         foreach ($iterators as $iterator) {
             if ($iterator->isDir()) {

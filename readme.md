@@ -1,32 +1,31 @@
 ## Laravel Migration Paths
-* By [nscreed](https://www.github.com/nscreed)
+By [matt127127](https://github.com/matt127127/laravel-migration-paths)
 
 During the periodical development phase the migrations folder may become very large. 
 It is very helpful if we can organize the content of the migration folders.
-This library helps to organize migration files in different folders. 
-Even, if your organize your existing files it will works as well.
+This library helps to organize migration files in different folders.
 
-### Installations:
+### Installation:
 Use [Composer](https://getcomposer.org/) to install the library.
 ```bash
-composer require nscreed/laravel-migration-paths
+composer require matt127127/laravel-migration-paths
 ```
 
 After updating composer, add the service provider to the `providers` array in `config/app.php`
 ```php
-NsCreed\MigrationPath\ServiceProvider::class,
+matt127127\MigrationPath\ServiceProvider::class,
 ```
 
 **Laravel 5.5** uses Package Auto-Discovery, so does not require you to manually add the ServiceProvider.
 
-### Usages
-By default all folders under the `migrations` directory will be registered for migrations.
+### Usage:
+By default all folders under the `database/migrations` directory will be registered for migrations.
 
-But, if you like to add custom directories which is not under the migrations folder 
+But, if you would like to add multiple directories which are not under the migrations folder,
 you have to publish the config first.
 
 ```php
-php artisan vendor:publish --provider="NsCreed\MigrationPath\ServiceProvider" --tag="config"
+php artisan vendor:publish --provider="matt127127\MigrationPath\ServiceProvider" --tag="config"
 ```
 
 Add your custom directories:

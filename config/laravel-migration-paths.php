@@ -13,7 +13,7 @@ return [
     | -- dir2
     | ---- dir2.1
     |
-    | 02. You can register additional directories outside the migrations folder
+    | 02. You can register additional directories outside the migrations folder, give the absolute path
     */
 
     'paths' => [
