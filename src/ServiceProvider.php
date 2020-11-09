@@ -27,6 +27,7 @@ class ServiceProvider extends LaravelServiceProvider
 
             $multipleMigrationPaths = new MultipleMigrationPaths(config('laravel-migration-paths'));
             $this->loadMigrationsFrom($multipleMigrationPaths->getRegisteredPaths());
+
         }
     }
 }

@@ -2,7 +2,10 @@
   "name": "matt127127/laravel-migration-paths",
   "description": "Multiple migration paths for Laravel projects.",
   "type": "library",
-  "keywords": ["laravel", "migrations"],
+  "keywords": [
+    "laravel",
+    "migrations"
+  ],
   "license": "MIT",
   "authors": [
     {
@@ -14,7 +17,8 @@
   "prefer-stable": true,
   "require": {
     "php": ">=7.0",
-    "illuminate/console": "^6.0|^7.0|^8.0"
+    "illuminate/console": "^6.0|^7.0|^8.0",
+    "illuminate/database": "^6.0|^7.0|^8.0"
   },
   "autoload": {
     "psr-4": {
@@ -24,7 +28,8 @@
   "extra": {
     "laravel": {
       "providers": [
-        "matt127127\\MigrationPath\\ServiceProvider"
+        "matt127127\\MigrationPath\\ServiceProvider",
+        "matt127127\\MigrationPath\\MigrationServiceProvider"
       ]
     }
   }
