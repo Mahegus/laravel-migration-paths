@@ -2,6 +2,7 @@
 
 namespace matt127127\MigrationPath;
 
+use Illuminate\Contracts\Events\Dispatcher;
 use matt127127\MigrationPath\Console\Migration\MigrateCommand;
 
 class MigrationServiceProvider extends \Illuminate\Database\MigrationServiceProvider
@@ -16,7 +17,7 @@ class MigrationServiceProvider extends \Illuminate\Database\MigrationServiceProv
     protected function registerMigrateCommand()
     {
         $this->app->singleton('command.migrate', function($app) {
-            return new MigrateCommand($app['migrator'], $app['dispatcher']);
+            return new MigrateCommand($app['migrator'], $app[Dispatcher::class]);
         });
     }
 }

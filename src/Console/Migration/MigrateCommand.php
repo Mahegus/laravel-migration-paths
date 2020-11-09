@@ -8,10 +8,6 @@ use Illuminate\Database\Migrations\Migrator;
 
 class MigrateCommand extends \Illuminate\Database\Console\Migrations\MigrateCommand
 {
-    public function __construct(Migrator $migrator, Dispatcher $dispatcher)
-    {
-        parent::__construct($migrator, $dispatcher);
-    }
 
     public function handle()
     {
