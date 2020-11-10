@@ -2,6 +2,7 @@
 namespace matt127127\MigrationPath;
 
 
+use matt127127\MigrationPath\Exceptions\InvalidPathException;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
@@ -42,7 +43,7 @@ class MultipleMigrationPaths
         $paths = [];
 
         $iterators = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS), 
+            new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS),
             RecursiveIteratorIterator::SELF_FIRST
         );
 
