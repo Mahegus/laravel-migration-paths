@@ -3,6 +3,7 @@
 namespace matt127127\MigrationPath;
 
 use matt127127\MigrationPath\Console\Migration\MigrateCommand;
+use Illuminate\Database\Console\Migrations\MigrateMakeCommand;
 
 class MigrationServiceProvider extends \Illuminate\Database\MigrationServiceProvider
 {
@@ -15,7 +16,7 @@ class MigrationServiceProvider extends \Illuminate\Database\MigrationServiceProv
 
     protected function registerMigrateCommand()
     {
-        $this->app->singleton('command.migrate.make', function($app) {
+        $this->app->singleton(MigrateMakeCommand::class, function($app) {
             return new MigrateCommand($app['migration.creator'], $app['composer']);
         });
     }
